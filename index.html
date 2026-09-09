@@ -74,6 +74,26 @@ a:hover{text-decoration:underline}
 .whatsnew li{margin:5px 0}
 .whatsnew b{color:#161d2e}
 
+/* 지난 업데이트 접기 */
+.pastupdates{
+  margin:10px 0 8px; border:1px solid var(--line); border-radius:12px;
+  background:#fbfcff;
+}
+.pastupdates > summary{
+  cursor:pointer; padding:11px 18px; font-size:13px; font-weight:700;
+  color:var(--navy); list-style:none; user-select:none; border-radius:12px;
+}
+.pastupdates > summary::-webkit-details-marker{display:none}
+.pastupdates > summary::before{
+  content:'\25B8'; display:inline-block; width:14px; margin-right:6px;
+  color:var(--muted); transition:transform .15s ease;
+}
+.pastupdates[open] > summary::before{transform:rotate(90deg)}
+.pastupdates > summary:hover{background:#f2f4fd}
+.pastupdates > summary .count{color:var(--muted); font-weight:600; margin-left:4px}
+.pastupdates .whatsnew{margin:0 14px 14px; background:#fff}
+.pastupdates .whatsnew:first-of-type{margin-top:4px}
+
 /* 업데이트 예고 (문서 하단, 본문보다 작게) */
 .upcoming{
   margin:34px 0 6px; padding:14px 18px; background:#fbfcff;
@@ -207,6 +227,8 @@ figure.shot figcaption{
           <li><b>아직 수집되지 않은 기간의 성과는 <code>0</code>이 아니라 <code>-</code>로 표시됩니다.</b> 실제로 0인 것과 구분됩니다.</li>
         </ul>
       </div>
+      <details class="pastupdates">
+        <summary>지난 업데이트 <span class="count">3건</span></summary>
       <div class="whatsnew">
         <p class="whatsnew-title">2026-08-28 업데이트</p>
         <ul>
@@ -237,6 +259,7 @@ figure.shot figcaption{
           <li><b>CLIENT(광고주) 계정도 모든 기능을 사용할 수 있습니다.</b> USER 계정과 동일하게 전체 메뉴가 열리고 광고 생성·재수집까지 가능합니다. → <a href="#누가-사용할-수-있나요">§1에서 자세히</a></li>
         </ul>
       </div>
+      </details>
       <div class="realnote">📸 <span><b>이 가이드의 모든 화면은 실제 Lever Xpert 솔루션</b>에서 직접 캡쳐했습니다(2026-07-09, 콘텐츠 유형 필터 화면은 2026-07-29). 인플루언서 이름·계정, 광고비·매출 등 금액, 광고코드 같은 <b>민감 정보는 가려서(블러) 표시</b>했으며, 화면 구성은 업데이트에 따라 달라질 수 있습니다.</span></div>
     </div>
 
